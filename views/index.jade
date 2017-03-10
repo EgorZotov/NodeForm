@@ -1,0 +1,88 @@
+include layout
+body
+  form(action='/result', method='post')
+    .form_wrapping
+      fieldset
+        legend Формирование заказа
+        em Тип сайта
+        br
+        .select-style
+          select(name='mark')
+            option(value='Volvo') Volvo
+            option(value='Mercedes') Mercedes
+            option(value='BMW') BMW
+            option(value='Lexus') Lexus
+            option(value='Nissan') Nissan
+            option(value='Toyota') Toyota
+        br
+        .image
+          img(src='/images/blank-car.png')
+          em Цвет автомобиля
+          br
+        input#radio_4.radio(type='radio', name='colr', value='Красный')
+        label(for='radio_4') Красный
+        input#radio_5.radio(type='radio', name='colr', value='Синий')
+        label(for='radio_5') Синий
+        input#radio_6.radio(type='radio', name='colr', value='Розовенький ')
+        label(for='radio_6') Розовенький
+        input#radio_7.radio(type='radio', name='colr', value='Желтый')
+        label(for='radio_7') Желтый
+        .image
+          img(src='/images/blank-time.png')
+          em Срок выдачи автомобиля
+          br
+        input#radio_8.radio(type='radio', name='deadline', value='Забрать в салоне (2 дня)')
+        label(for='radio_8') Забрать в салоне (2 дня)
+        input#radio_9.radio(type='radio', name='deadline', value='Производство (1 месяц)')
+        label(for='radio_9') Производство (1 месяц)
+        input#radio_10.radio(type='radio', name='deadline', value='Б/У варианты')
+        label(for='radio_10') Б/У варианты
+        .image
+          img(src='/images/blank-audio.png')
+          em Аудиосистема
+          br
+        input#radio_1.radio(type='radio', name='audio', value='Стандартное аудио')
+        label(for='radio_1') Стандартное аудио
+        input#radio_2.radio(type='radio', name='audio', value='Аудиосистема ВырвиУши-3000')
+        label(for='radio_2') Аудиосистема ВырвиУши-3000
+        input#radio_3.radio(type='radio', name='audio', value='Наушники оденешь')
+        label(for='radio_3') Наушники оденешь
+        .image
+          img(src='/images/blank-year.png')
+          em Год выпуска
+        input(size='1', type='text', name='year')
+        |  год
+        br
+        input.js-switch(type='checkbox', name='disc')
+        em Литые диски?
+        br
+        input.js-switch(type='checkbox', name='winter')
+        em Зимняя резина?
+        br
+        input.js-switch(type='checkbox', name='asswarm')
+        em Подогрев задницы?
+        br
+    .form_wrapping.right
+      fieldset
+        legend Ваши данные
+        em ФИО
+        br
+        input.full-size(placeholder='Фамилия Имя Отчество', type='text', name='name')
+        br
+        em Email
+        br
+        input.full-size(placeholder='Введите ваш e-mail', type='text', name='email')
+        br
+        em Телефон
+        br
+        input.full-size(placeholder='+7-(xxx)-xxx-xx-xx', type='text', name='phone')
+        br
+        input.full-size.sub(type='submit', name='sub')
+        a(href='/result') Перейти на проверку результата
+  script.
+      var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+      elems.forEach(function (html) {
+          var switchery = new Switchery(html, {size: 'small', color: '#b74c4c', jackColor: '#990000'});
+      });
+
+

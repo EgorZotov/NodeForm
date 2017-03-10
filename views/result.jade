@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title Результат
+        link(rel='stylesheet', type='text/css', href='/stylesheets/styles.css')
+    body(style='text-align: center')
+        .form_wrapping.center
+            fieldset
+                legend Информация о заявке
+                em Статус - в рассмотрении:
+                br
+                em ФИО:#{data.name}
+                br
+                em Email:#{data.email}
+                br
+                em Телефон:#{data.phone}
+                br
+                em Марка:#{data.mark}
+                br
+                em Цвет:#{data.colr}
+                br
+                em Срок выдачи автомобиля:#{data.deadline}
+                br
+                em Аудиосистема:#{data.audio}
+                br
+                em Год выпуска:#{data.year}г.
+                br
+                em="Литые диски:"+(data.disc?"Да":"Нет")
+                br
+                em="Зимняя резина:"+(data.winter?"Да":"Нет")
+                br
+                em="Подогрев задницы:"+(data.asswarm?"Да":"Нет")
+                br
+                em Общая стоимость работ :
+                br
+                a(href='/') На главную
+
